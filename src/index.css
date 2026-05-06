@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital@0;1&family=Playfair+Display:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Lora", Georgia, serif;
+  --font-display: "Playfair Display", serif;
+
+  --color-primary: #1A1A1A;
+  --color-secondary: #666666;
+  --color-accent: #C8A96E;
+  --color-bg-light: #F5F5F5;
+  --color-border: #E5E5E5;
+
+  --letter-spacing-wide: 0.12em;
+  --letter-spacing-wider: 0.2em;
+  --letter-spacing-widest: 0.25em;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-primary font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply uppercase font-sans font-bold tracking-widest;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-8 py-3 border border-primary bg-primary text-white uppercase tracking-wide text-xs transition-all duration-300 hover:bg-white hover:text-primary cursor-pointer inline-flex items-center justify-center;
+  }
+
+  .btn-outline {
+    @apply px-8 py-3 border border-white bg-transparent text-white uppercase tracking-wide text-xs transition-all duration-300 hover:bg-white hover:text-primary cursor-pointer inline-flex items-center justify-center;
+  }
+
+  .nav-link {
+    @apply uppercase text-[11px] font-medium tracking-wide text-secondary hover:text-primary relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
